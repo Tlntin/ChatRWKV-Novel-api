@@ -1,0 +1,8 @@
+tokenizers>=0.13.2
+torch
+fastapi
+uvicorn
+rwkv==0.7.3
+pydantic
+tqdm
+numpy
