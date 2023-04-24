@@ -6,6 +6,9 @@
 [link](https://huggingface.co/BlinkDL/rwkv-4-novel/tree/main)
 - you can use wget to download it
 
+### RWKV-Copilot extension for VSCode
+[link](https://github.com/Tlntin/rwkv-copilot)
+
 ### how to run?
 - install nvidia-driver, nvidia-cuda and python
 ```bash

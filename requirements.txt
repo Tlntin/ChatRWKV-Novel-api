@@ -6,3 +6,4 @@ rwkv==0.7.3
 pydantic
 tqdm
 numpy
+pyyaml

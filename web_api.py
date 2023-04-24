@@ -174,6 +174,8 @@ def on_message(message, free_gen_len, chunk_len):
         except Exception as err:
             print(err)
             return
+    else:
+        return []
 
     begin = len(model_tokens)
     out_last = begin
@@ -234,18 +236,23 @@ def on_message(message, free_gen_len, chunk_len):
 ########################################################################################################
 class Data(BaseModel):
     msg: str
-    free_len: int = 256
-    chunk_len: int = 512
+    generatorLength: int = 256
+    chunkLength: int = 512
 
 
 @app.post("/gen/")
 def gen(data: Data):
-    return on_message(data.msg, data.free_len, data.chunk_len)
+    return on_message(data.msg, data.generatorLength, data.chunkLength)
 
 
 if __name__ == '__main__':
     uvicorn.run(
-        app='web_api:app', host="127.0.0.1", port=6288, reload=True, workers=1,
+        app='web_api:app',
+        host="127.0.0.1",
+        port=6288,
+        reload=True,
+        workers=1,
+        log_config="log_conf.yaml",
     )
 
 
